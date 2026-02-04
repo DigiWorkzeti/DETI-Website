@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigiWorkz | Services</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo-dark.png" alt="DigiWorkz Logo" class="logo-dark">
+  </div>
+
+  <div class="menu-toggle default-toggle" id="defaultToggle">
+    ☰
+  </div>
+
+  <nav id="defaultNav">
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="products.html">Products</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- SERVICES LAYERS -->
+<section class="services-section">
+
+    <!-- SERVICES HEADER -->
+    <div class="services-header">
+        <h1>Our Services</h1>
+        <div class="services-divider"></div>
+    </div>
+
+    <!-- SERVICE 1 -->
+    <div class="service-layer">
+        <div class="service-img">
+        <img src="images/supply.png" alt="Supply and Installation">
+        </div>
+
+        <div class="service-text">
+        <div class="service-text-box service-supply">
+            <h2>Supply and Installation</h2>
+            <p>
+            Share your plans, requirements, or bill of quantities, and we will provide a detailed project cost estimate.
+            Our team conducts inspections, provides quotations, and recommends cost-effective solutions.
+            </p>
+        </div>
+        </div>
+    </div>
+
+    <!-- SERVICE 2 -->
+    <div class="service-layer reverse">
+        <div class="service-img">
+        <img src="images/maintenance.png" alt="Preventative Maintenance">
+        </div>
+
+        <div class="service-text">
+        <div class="service-text-box service-maintenance">
+            <h2>Preventative Maintenance</h2>
+            <p>
+            Experiencing frequent system breakdowns? We ensure long-term reliability by providing scheduled maintenance
+            to keep your security systems fully operational.
+            </p>
+        </div>
+        </div>
+    </div>
+
+    <!-- SERVICE 3 -->
+    <div class="service-layer">
+        <div class="service-img">
+        <img src="images/troubleshoot.png" alt="Troubleshoot and System Repair">
+        </div>
+
+        <div class="service-text">
+        <div class="service-text-box service-repair">
+            <h2>Troubleshoot and System Repair</h2>
+            <p>
+            Facing system issues? Before replacing it, try our troubleshooting service.
+            We offer free minor repairs, detailed status reports, and cost-effective repair plans.
+            </p>
+        </div>
+        </div>
+    </div>
+
+</section>
+
+<script>
+  const defaultToggle = document.getElementById("defaultToggle");
+  const defaultNav = document.getElementById("defaultNav");
+
+  defaultToggle.addEventListener("click", () => {
+    defaultNav.classList.toggle("show");
+  });
+</script>
+
+<footer class="footer">
+  <p>© 2019 DigiWorkz. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

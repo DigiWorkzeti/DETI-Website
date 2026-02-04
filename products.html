@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigiWorkz | Products</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo-dark.png" alt="DigiWorkz Logo" class="logo-dark">
+  </div>
+
+  <div class="menu-toggle default-toggle" id="defaultToggle">
+    ☰
+  </div>
+
+  <nav id="defaultNav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="products-carousel-section">
+  <h1 class="products-title">Our Products</h1>
+  <div class="products-divider"></div>
+
+  <div class="carousel-3d">
+    <button class="carousel-btn prev">&#10094;</button>
+
+    <div class="carousel-3d-track">
+      <div class="carousel-3d-card">
+        <img src="images/products/cctv.png">
+        <h3>IP and Analog CCTV System</h3>
+        <p>A security camera setup that records and monitors video using both IP and analog technologies for reliable surveillance.</p>
+        <div class="brand-used">
+          <span class="brand-label">Brand We Use:</span>
+          <img src="images/brands/hikvision.png" alt="Brand Logo">
+        </div>
+      </div>
+
+      <div class="carousel-3d-card">
+        <img src="images/products/access-control.jpg">
+        <h3>Centralized Access Control System</h3>
+        <p>A system that manages and restricts entry to buildings or rooms through centralized control of doors and user permissions.</p>
+        <div class="brand-used">
+          <span class="brand-label">Brand We Use:</span>
+          <img src="images/brands/zkteco.png" alt="Brand Logo">
+        </div>
+      </div>
+
+      <div class="carousel-3d-card">
+        <img src="images/products/pabgm.jpg">
+        <h3>PABGM and Paging System</h3>
+        <p>A telephone network that connects internal extensions with a paging feature for broadcasting announcements across a facility.</p>
+        <div class="brand-used">
+          <span class="brand-label">Brand We Use:</span>
+          <img src="images/brands/toa.png" alt="Brand Logo">
+        </div>
+      </div>
+
+      <div class="carousel-3d-card">
+        <img src="images/products/intercom.jpeg">
+        <h3>Intercom System</h3>
+        <p>A communication system that allows instant two-way audio or video calls between different areas of a building.</p>
+        <div class="brand-used">
+          <span class="brand-label">Brand We Use:</span>
+          <img src="images/brands/basip.png" alt="Brand Logo">
+        </div>
+      </div>
+
+      <div class="carousel-3d-card">
+        <img src="images/products/fire-alarm.jpg">
+        <h3>Fire Alarm and Detection System</h3>
+        <p>A system that detects smoke or fire early and alerts occupants through alarms and notifications.</p>
+        <div class="brand-used">
+          <span class="brand-label">Brand We Use:</span>
+          <img src="images/brands/edwards.png" alt="Brand Logo">
+        </div>
+      </div>
+
+      <div class="carousel-3d-card">
+        <img src="images/products/fire-extinguisher.png">
+        <h3>Fire Extinguisher</h3>
+        <p>A portable device used to quickly suppress small fires before they spread.</p>
+        <div class="brand-used">
+          <span class="brand-label">Brand We Use:</span>
+          <img src="images/brands/amerex.png" alt="Brand Logo">
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2019 DigiWorkz. All Rights Reserved.</p>
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.carousel-3d-card');
+const prev = document.querySelector('.carousel-btn.prev');
+const next = document.querySelector('.carousel-btn.next');
+
+let current = 0;
+
+function getOffset(i, current, total) {
+  let offset = i - current;
+  const half = Math.floor(total / 2);
+
+  if (offset > half) offset -= total;
+  if (offset < -half) offset += total;
+
+  return offset;
+}
+
+function updateCarousel() {
+  const total = cards.length;
+
+  cards.forEach((card, i) => {
+    const offset = getOffset(i, current, total);
+
+    // Always render the card, but hide if outside -2 to 2
+    const isVisible = Math.abs(offset) <= 2;
+
+    card.style.opacity = isVisible ? 1 : 0;
+    card.style.pointerEvents = isVisible ? "auto" : "none";
+
+    const shade = 1 - (Math.abs(offset) * 0.18);
+    card.style.filter = `brightness(${shade})`;
+
+    card.style.transform = `
+      translate(-50%, -50%)
+      translateX(${offset * 180}px)
+      scale(${1 - Math.abs(offset) * 0.07})
+      rotateY(0deg)
+    `;
+
+    if (offset === 0) card.classList.add("active");
+    else card.classList.remove("active");
+
+    card.style.zIndex = 100 - Math.abs(offset);
+  });
+}
+
+next.addEventListener('click', () => {
+  current = (current + 1) % cards.length;
+  updateCarousel();
+});
+
+prev.addEventListener('click', () => {
+  current = (current - 1 + cards.length) % cards.length;
+  updateCarousel();
+});
+
+// Initial layout (NO animation)
+updateCarousel();
+
+// Enable animation AFTER first paint
+  requestAnimationFrame(() => {
+  document.querySelector(".carousel-3d").classList.add("ready");
+});
+
+  const defaultToggle = document.getElementById("defaultToggle");
+  const defaultNav = document.getElementById("defaultNav");
+
+  defaultToggle.addEventListener("click", () => {
+    defaultNav.classList.toggle("show");
+  });
+
+  const track = document.querySelector('.carousel-3d-track');
+  let startX = 0;
+  let endX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchend', () => {
+    const diff = startX - endX;
+
+    if (diff > 40) {
+      // swipe left
+      document.querySelector('.carousel-btn.next').click();
+    } else if (diff < -40) {
+      // swipe right
+      document.querySelector('.carousel-btn.prev').click();
+    }
+  });
+
+</script>
+
+
+</body>
+</html>

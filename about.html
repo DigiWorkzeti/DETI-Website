@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigiWorkz | About Us</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo-dark.png" alt="DigiWorkz Logo" class="logo-dark">
+  </div>
+
+  <div class="menu-toggle default-toggle" id="defaultToggle">
+    ☰
+  </div>
+
+  <nav id="defaultNav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="products.html">Products</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- ABOUT US -->
+<section class="about">
+  <h2 class="section-title">About Us</h2>
+  <div class="products-divider"></div>
+
+  <div class="about-content">
+    <div class="about-text">
+      <h3>How Digiworkz was found...</h3>
+      <p>
+        In early 2019, our venture into the electronic security system product supply business in Batangas stemmed from our personal backgrounds.
+      </p>
+      <p>
+        Our team members complement each other's skills and expertise, enabling us to execute operations and deliver projects with a sense of pride and honor. We've faced challenges and seized opportunities resulting from unexpected events, which prompted us to be more proactive in providing services to those who require them beyond mere business necessities. 
+      </p>
+      <p>
+        Our initial clients valued this approach, leading to an influx of new clients through their endorsements and referrals. Consequently, we relocated our operational base to Makati, Metro Manila, where the majority of our new clients have been coming from.
+      </p>
+      <p>
+        Currently, numerous prominent companies have confidence in our ability to meet their electronic security system needs. They trust that we will provide the highest quality and adhere to industry best practices. We are committed to maintaining this trust as we expand, ensuring that we outperform our competitors in terms of quality, service, and reliability.
+      </p>
+    </div>
+
+    <div class="about-image">
+      <img src="images/about-us.png" alt="DigiWorkz Team">
+    </div>
+  </div>
+</section>
+
+<!-- PURPOSE -->
+<section class="purpose">
+  <div class="container">
+    <h2 class="section-title light">Our Purpose</h2>
+
+    <div class="purpose-cards row justify-content-center">
+      <div class="purpose-card">
+        <i class="bi bi-people-fill"></i>
+        <h4>Client Safety</h4>
+        <p>Enhance our clients' safety and secur​ity of residents, workers and visitors.</p>
+      </div>
+
+      <div class="purpose-card">
+        <i class="bi bi-piggy-bank-fill"></i>
+        <h4>Cost-Effective</h4>
+        <p>Provide cost-effective and best value on electronic security technology.</p>
+      </div>
+
+      <div class="purpose-card">
+        <i class="bi bi-tools"></i>
+        <h4>Reliable Service</h4>
+        <p>Deliver seamless quality service to each and every client every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="mission-content">
+    <div class="mission-text">
+      <h2>Our Mission</h2>
+      <p>
+        To provide cost-effective modern and high-standard products and services through our continuous learning efforts and adaptations of different and continuously upgrading electronic security technologies and safety measures.
+      </p>
+    </div>
+
+    <div class="mission-image">
+      <img src="images/mission.png" alt="Training Session">
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision">
+  <div class="vision-content">
+    <div class="vision-image">
+      <img src="images/vision.png" alt="Control Panel">
+    </div>
+
+    <div class="vision-text">
+      <h2>Our Vision</h2>
+      <p>
+        To be the first in mind when clients think of electronic security systems and building industries through the trust, quality, value, and excellent services we provide.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const defaultToggle = document.getElementById("defaultToggle");
+  const defaultNav = document.getElementById("defaultNav");
+
+  defaultToggle.addEventListener("click", () => {
+    defaultNav.classList.toggle("show");
+  });
+</script>
+
+<footer class="footer">
+  <p>© 2019 DigiWorkz. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
