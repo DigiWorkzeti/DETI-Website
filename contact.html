@@ -178,6 +178,13 @@
       });
     });
   }
+
+  const toggle = document.getElementById("defaultToggle");
+  const nav = document.getElementById("defaultNav");
+
+  toggle.addEventListener("click", function () {
+    nav.classList.toggle("show");
+  });
 </script>
 
 </body>
