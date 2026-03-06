@@ -741,6 +741,7 @@ body {
 .carousel-card {
   background: white;
   width: 320px;
+  height: 550px;
   padding: 20px;
   border-radius: 18px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
@@ -1803,5 +1804,6 @@ body {
     font-size: 16px;
   }
 }
+
 
 
