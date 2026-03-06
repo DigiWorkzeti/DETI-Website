@@ -902,7 +902,6 @@ body {
   max-height: 70px;   /* limit height */
   overflow-y: auto;   /* scroll if content is longer */
 }
-
 /* =========================
    MOBILE RESPONSIVE FIX
 ========================= */
@@ -1804,6 +1803,7 @@ body {
     font-size: 16px;
   }
 }
+
 
 
 
