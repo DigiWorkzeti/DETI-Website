@@ -139,7 +139,7 @@ function updateCarousel() {
 
     card.style.transform = `
       translate(-50%, -50%)
-      translateX(${offset * 180}px)
+      translateX(${offset * (window.innerWidth * 0.12)}px)
       scale(${1 - Math.abs(offset) * 0.07})
       rotateY(0deg)
     `;
@@ -205,4 +205,5 @@ updateCarousel();
 
 </body>
 </html>
+
 
