@@ -706,7 +706,8 @@ body {
 
 /*PRODUCTS SECTION*/
 .products-carousel-section {
-  max-width: 1300px;
+  max-width: 1800px;   /* allows bigger screens */
+  width: 90%;
   margin: 100px auto 0px;
   padding: 0 20px;
   height: 100vh;
@@ -854,8 +855,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 490px;
+  width: clamp(280px, 20vw, 380px);
+  height: clamp(420px, 28vw, 560px);
   padding: 20px;
   background: white;
   border-radius: 20px;
@@ -925,7 +926,7 @@ body {
   .carousel-3d {
     height: auto;
     padding: 0px 0;
-    perspective: 900px;
+    perspective: 1600px;
     overflow: hidden;
   }
 
@@ -1804,3 +1805,4 @@ body {
     font-size: 16px;
   }
 }
+
